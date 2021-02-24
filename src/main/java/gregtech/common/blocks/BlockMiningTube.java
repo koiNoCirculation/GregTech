@@ -9,7 +9,6 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraftforge.common.property.Properties;
 
 /**
  * TODO: should only harvested by wrench
@@ -24,13 +23,9 @@ public class BlockMiningTube extends Block {
 
     @Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
-        return true;
-    }
-
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
+
 
     @Override
     public boolean isFullCube(IBlockState state) {

@@ -1,8 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "gregtech:mining_tube"
-    },
     "normal": {
       "model": "gregtech:mining_tube"
     }
