@@ -31,6 +31,11 @@ buildscript {
             name = "forge"
             setUrl("http://files.minecraftforge.net/maven")
         }
+        //cursegradle resolve failure
+        maven {
+            name = "gradle"
+            setUrl("https://plugins.gradle.org/m2/")
+        }
     }
     dependencies {
         classpath("net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT")
@@ -376,7 +381,7 @@ fun getActualChangeList(): String {
 fun getBuildNumber(): String {
     val gitLog = git.log()
     val headCommitId = git.repository.resolve(Constants.HEAD)
-    val startCommitId = ObjectId.fromString("c795901d796fba8ce8d3cb87d0172c59f56f3c9b")
+    val startCommitId = ObjectId.fromString("011334576ccb057cc7b3190503520798e3b6ee08")
     gitLog.addRange(startCommitId, headCommitId)
     return gitLog.call().toList().size.toString()
 }
