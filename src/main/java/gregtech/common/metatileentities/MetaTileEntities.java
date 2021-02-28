@@ -4,6 +4,7 @@ import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
+import gregtech.api.metatileentity.TieredMetaTileEntity;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.render.Textures;
 import gregtech.api.unification.material.Materials;
@@ -97,6 +98,8 @@ public class MetaTileEntities {
     public static SimpleMachineMetaTileEntity[] SIFTER = new SimpleMachineMetaTileEntity[4];
     public static SimpleMachineMetaTileEntity[] THERMAL_CENTRIFUGE = new SimpleMachineMetaTileEntity[4];
     public static SimpleMachineMetaTileEntity[] WIREMILL = new SimpleMachineMetaTileEntity[4];
+    //MINER AND OIL RIG SECTION
+    public static TieredMetaTileEntity[] MINERS = new TieredMetaTileEntity[3];
 
     //GENERATORS SECTION
     public static SimpleGeneratorMetaTileEntity[] DIESEL_GENERATOR = new SimpleGeneratorMetaTileEntity[4];
@@ -409,6 +412,11 @@ public class MetaTileEntities {
         ITEM_COLLECTOR[1] = GregTechAPI.registerMetaTileEntity(495, new MetaTileEntityItemCollector(gregtechId("item_collector.mv"), 2, 16));
         ITEM_COLLECTOR[2] = GregTechAPI.registerMetaTileEntity(496, new MetaTileEntityItemCollector(gregtechId("item_collector.hv"), 3, 32));
         ITEM_COLLECTOR[3] = GregTechAPI.registerMetaTileEntity(497, new MetaTileEntityItemCollector(gregtechId("item_collector.ev"), 4, 64));
+
+        MINERS[0] = GregTechAPI.registerMetaTileEntity(1040, new MetaTileEntityMiner(gregtechId("miner.lv"), 1,  RecipeMaps.MACERATOR_RECIPES, Textures.MINER_OVERLAY));
+        MINERS[1] = GregTechAPI.registerMetaTileEntity(1041, new MetaTileEntityMiner(gregtechId("miner.mv"), 2,  RecipeMaps.MACERATOR_RECIPES, Textures.MINER_OVERLAY));
+        MINERS[2] = GregTechAPI.registerMetaTileEntity(1042, new MetaTileEntityMiner(gregtechId("miner.hv"), 3,  RecipeMaps.MACERATOR_RECIPES, Textures.MINER_OVERLAY));
+
 
         for (int i = 0; i < HULL.length; i++) {
             MetaTileEntityHull metaTileEntity = new MetaTileEntityHull(gregtechId("hull." + GTValues.VN[i].toLowerCase()), i);
